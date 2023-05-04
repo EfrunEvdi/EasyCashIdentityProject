@@ -1,4 +1,4 @@
-﻿# 2 Ders ()
+﻿# 2 Ders (Projenin Oluşturulması)
 
 * 6.0 'da Startup yok o yüzden geçişler kolay oluyor.
 * Tek tek paket yüklemek yerine Solution'da sağ tıklayıp nugette paket yüklüyoruz.
@@ -9,7 +9,7 @@
 * Microsoft.AspNetCore.Identity 2.2.0
 * Microsoft.AspNetCore.Identity.EntityFrameworkCore 6.0.16 
 
-# 3 Ders ()
+# 3 Ders (Referans İşlemleri ve Entitylerin Yazılması)
 
 Katmanların birbirleriyle referans işlemleri.
 EntityLayer: ...
@@ -27,7 +27,7 @@ Access Modifiers: Erişim belirleyicileri
 -Protected: bağlı bulunduğu sınıftan ve o sınıfı kalıtsal olarak alan sınıflardan erişilebiliyor.
 -Internal: sadece bulunduğu katmanda erişim sağlanabilir.
 
-# 4 Ders ()
+# 4 Ders (Identity Kütüphanesinin Eklenmesi)
 
 Migration eklerken Up veritabanında oluşacakları gösterirken, down iptal edersek nelerin silineceğini gösterir.
 
@@ -47,3 +47,6 @@ Id
 Name Admin, Member .. 
 NormalizedName büyük harflerle yazıldığı hali
 ConcurrencyStamp
+
+# 5 Ders (AspNet User Tablosunun Özelleştirilmesi)
+Bu derste ilk olarak AppUser adlı sınıfı oluşturduk. Identity paketi ile gelen AppUser'ı kişiselleştirebilmek için. Ardından migration yaptık.
