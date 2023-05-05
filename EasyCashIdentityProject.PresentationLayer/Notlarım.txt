@@ -50,3 +50,30 @@ ConcurrencyStamp
 
 # 5 Ders (AspNet User Tablosunun Özelleştirilmesi)
 Bu derste ilk olarak AppUser adlı sınıfı oluşturduk. Identity paketi ile gelen AppUser'ı kişiselleştirebilmek için. Ardından migration yaptık.
+
+# 6 Ders (Dto katmanı ve AppUserRegisterDto Sınıfı)
+Bu derste ilk olarak appuser tablosu ile customeraccount tablosunu ilişkilendirdik. Ardından Dto katmanına oluşturduğumuz entitylerin dosyaları ekleyip AppUserRegisterDto sınıfını oluştrduk ve içini doldurduk.
+
+# 7 Ders (AppUserRegister Fluent Validation)
+Bu ders ilk olarak business katmanına 
+FluentValidation (11.5.2)
+FluentValidation.AspNetCore (11.3.0)
+FluentValidation.DependencyInjectionExtensions (11.5.2)
+paketlerini yükledik.
+
+ValidationRules adlı klasörü oluşturduktan sonra tüm entitiyler için ValidationRule klasörlerini açtık ve AppUserRegisterValidator için Validator yazdık.
+
+RuleFor Attribute'leri 
+--------------------------
+NotEmpty: Bir özelliğin boş olmadığını kontrol eder.
+Length: Bir özelliğin uzunluğunu kontrol eder. Minimum ve maksimum uzunluklar belirtilebilir.
+MinimumLength: Bir özelliğin minimum uzunluğunu kontrol eder.
+MaximumLength: Bir özelliğin maksimum uzunluğunu kontrol eder.
+EmailAddress: Bir özelliğin geçerli bir email adresi olduğunu kontrol eder.
+EqualTo: Bir özelliğin başka bir özellikle aynı değere sahip olup olmadığını kontrol eder.
+GreaterThan: Bir özelliğin belirtilen değerden büyük olup olmadığını kontrol eder.
+GreaterThanOrEqual: Bir özelliğin belirtilen değerden büyük veya eşit olup olmadığını kontrol eder.
+LessThan: Bir özelliğin belirtilen değerden küçük olup olmadığını kontrol eder.
+LessThanOrEqual: Bir özelliğin belirtilen değerden küçük veya eşit olup olmadığını kontrol eder.
+Matches: Bir özelliğin belirtilen düzenli ifade ile eşleşip eşleşmediğini kontrol eder.
+Must: Bir özelliğin özel bir koşulu sağlamasını gerektiren özel bir doğrulama kuralı tanımlar.
