@@ -77,3 +77,5 @@ LessThan: Bir özelliğin belirtilen değerden küçük olup olmadığını kont
 LessThanOrEqual: Bir özelliğin belirtilen değerden küçük veya eşit olup olmadığını kontrol eder.
 Matches: Bir özelliğin belirtilen düzenli ifade ile eşleşip eşleşmediğini kontrol eder.
 Must: Bir özelliğin özel bir koşulu sağlamasını gerektiren özel bir doğrulama kuralı tanımlar.
+
+# 8 Ders (Interface ve Repositorylerin Yazılması)
