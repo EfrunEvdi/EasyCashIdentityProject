@@ -79,6 +79,10 @@ Matches: Bir özelliğin belirtilen düzenli ifade ile eşleşip eşleşmediğin
 Must: Bir özelliğin özel bir koşulu sağlamasını gerektiren özel bir doğrulama kuralı tanımlar.
 
 # 8 Ders (Interface ve Repositorylerin Yazılması)
-
+Bu bölümde DataAccessLayer'da Abstract ve Repositories dosyalarını ve içini doldurduk.
 
 # 9 Ders (Business Katmanı ve Proje Tema Dosyaları)
+Bu bölümde BusinessLayer'da Abstract ve Concrete dosyalarını ve içini doldurduk.
+Tema dosyalarını indirdik.
+
+# 10 Ders ()
