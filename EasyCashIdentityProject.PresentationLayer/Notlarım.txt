@@ -85,4 +85,17 @@ Bu bölümde DataAccessLayer'da Abstract ve Repositories dosyalarını ve içini
 Bu bölümde BusinessLayer'da Abstract ve Concrete dosyalarını ve içini doldurduk.
 Tema dosyalarını indirdik.
 
-# 10 Ders ()
+# 10 Ders (Identity Register Backend)
+Bu derste register controllerı yazıp program.cs de UseAuthorization kodlarını yazdık.
+
+# 11 Ders (Identity Register Backend)
+Bu derste register controller'a
+        else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+
+kodunu yazdık ve Index tarafında form yapısı ile kayıt işlemini gerçekleştirdik. Controllerdaki kod validation summarydeki hata mesalarının gelmesini sağladı.
