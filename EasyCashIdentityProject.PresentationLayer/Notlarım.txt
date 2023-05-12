@@ -99,3 +99,10 @@ Bu derste register controller'a
                 }
 
 kodunu yazdık ve Index tarafında form yapısı ile kayıt işlemini gerçekleştirdik. Controllerdaki kod validation summarydeki hata mesalarının gelmesini sağladı.
+
+# 12 Ders (Identity Error Describer)
+Bu derste ilk olarak UI katmanındaki Model klasörüne CustomIdentityValidator ü ekleyip hata mesajlarını override ile güncelledik ve program.cs te
+
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+
+güncellemesini yapıp kontrol ederek dersi bitirdik.
