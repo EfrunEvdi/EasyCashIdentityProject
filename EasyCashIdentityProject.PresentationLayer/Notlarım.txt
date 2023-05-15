@@ -106,3 +106,28 @@ Bu derste ilk olarak UI katmanındaki Model klasörüne CustomIdentityValidator 
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
 güncellemesini yapıp kontrol ederek dersi bitirdik.
+
+# 13 Ders (Confirm Code Oluşturma)
+Bu derste ilk olarak ConfirmCode propertisini AppUser classına dahil ettim ardından register controller'da bu değere random değer atandırıp kontrol ederek dersi bitirdik.
+
+# 14 Ders(Mail'e Onay Kodu Gönderme)
+İlk olarak UI katmanına NETCore.MailKit (2.1.0) paketini indirip
+
+MimeMessage mimeMessage = new MimeMessage();
+MailboxAddress mailboxAddressFrom = new MailboxAddress("Easy Cash", "coretraversal@gmail.com");
+MailboxAddress mailboxAddressTo = new MailboxAddress("User", appUser.Email);
+mimeMessage.From.Add(mailboxAddressFrom);
+mimeMessage.To.Add(mailboxAddressTo);
+
+var bodyBuilder = new BodyBuilder();
+bodyBuilder.TextBody = "Kayıt işlemini gerçekleştirmek için onay kodunuz :" + code;
+mimeMessage.Body = bodyBuilder.ToMessageBody();
+
+mimeMessage.Subject = "Easy Cash Onay Kodu";
+SmtpClient client = new SmtpClient();
+client.Connect("smtp.gmail.com", 587, false);
+client.Authenticate("coretraversal@gmail.com", "???");
+client.Send(mimeMessage);
+client.Disconnect(true);
+
+registercontrollera bu kondları yazarak gönderme işlemini tamamlıyoruz.
