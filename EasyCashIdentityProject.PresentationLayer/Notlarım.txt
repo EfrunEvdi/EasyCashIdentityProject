@@ -131,3 +131,8 @@ client.Send(mimeMessage);
 client.Disconnect(true);
 
 registercontrollera bu kondları yazarak gönderme işlemini tamamlıyoruz.
+
+# 15 Ders (Confirm Sayfasına Mail Adresi Taşıma)
+Bu derste ilk olarak ConfirmMailController ve ardından buna bağlı indexi açtık devamında ConfirmMailViewModel ile lazım olan dataların propertilerini tanımlayıp 
+TempData["Mail"] = appUserRegisterDto.Email;
+ile maili ConfirmMailin indexine getirip dersi bitirdik.
