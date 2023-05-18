@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ConfirmMailViewModel
+
+@{
     Layout = null;
 }
 
@@ -36,8 +38,8 @@
     <div class="w3layoutscontaineragileits">
         <h2>MAİL ONAYLAMA FORMU</h2>
         <form method="post">
-            @ViewBag.v
-            <input type="text" placeholder="Mail adresinize gelen 6 haneli kodu giriniz." required="">
+            <input type="hidden" class="form-control" value="@ViewBag.Mail" asp-for="Mail" />
+            <input type="text" placeholder="Mail adresinize gelen 6 haneli kodu giriniz." asp-for="ConfirmCode" required="">
 
             <div class="aitssendbuttonw3ls">
                 <input type="submit" value="Hesabı Aktifleştir!">
