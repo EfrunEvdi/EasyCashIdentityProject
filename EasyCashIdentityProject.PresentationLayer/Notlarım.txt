@@ -141,3 +141,13 @@ ile maili ConfirmMailin indexine getirip dersi bitirdik.
 Bu derste ilk olarak post kısmına maile getiremediğimiz için ConfirmViewModelde propertyyi güncelledik. Ardından ConfirmMailControlleda gerekli düzenlemeleri yaptıktan sonra
 
   <input type="hidden" class="form-control" value="@ViewBag.Mail" asp-for="Mail" /> ile maile aldık ve işlemi başarılı bir şekilde tamamladık.
+
+# 17 Ders (Email Confirmed İşlemi)
+Bu derste ConfirmMailController'a
+user.EmailConfirmed = true;
+await _userManager.UpdateAsync(user); ile maili true yaptırdık.
+
+# 18 Ders (Login İşlemi)
+signInManager.PasswordSignInAsync metodunun overloadında 
+isPersistent: bu şifre çerezlerde saklansın mı anlamına geliyor, beni hatırla işlemi
+lockoutOnFailure: başarısız giriş işlemini AccessFailedCount'a atar. 5 kere yanlış girilirse sistemden 5 dk uzak duracak.
