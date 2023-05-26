@@ -151,3 +151,6 @@ await _userManager.UpdateAsync(user); ile maili true yaptırdık.
 signInManager.PasswordSignInAsync metodunun overloadında 
 isPersistent: bu şifre çerezlerde saklansın mı anlamına geliyor, beni hatırla işlemi
 lockoutOnFailure: başarısız giriş işlemini AccessFailedCount'a atar. 5 kere yanlış girilirse sistemden 5 dk uzak duracak.
+
+# 19 Ders (Customer UI Layout)
+Bu derste kullanıcı için laout ve bu layputa ait componentleme işlemleri yaptık.
