@@ -157,3 +157,6 @@ Bu derste kullanıcı için layout ve bu layouta ait componentleme işlemlerini 
 
 # 20 Ders (Layout Düzenlemeleri)
 Bu derste sidebar scroll kısmındaki hatayı giderip layoutu türkçeleştirdik.
+
+# 21 Ders (Login Yapan Kullanıcı Bilgilerini Getirme)
+Bu derste giriş yapmış kullanıcıya ait bilgilerin geldiği Account sayfasını yaptık.

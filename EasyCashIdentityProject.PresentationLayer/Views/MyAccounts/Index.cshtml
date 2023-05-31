@@ -1,8 +1,137 @@
-﻿
+﻿@model AppUserEditDto
+
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/MyProfile/Index.cshtml";
+    Layout = "~/Views/CustomerLayout/Index.cshtml";
 }
 
-<h2>Index</h2>
+<div class="page-title">
+    <div class="title_left">
+        <h3>Easy Cash | Kullanıcı Paneli</h3>
+    </div>
 
+    <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Aranacak Kelime">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Ara!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Easy Cash <small>Profil Bilgileri Düzenleme Formu</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="x_content">
+                <form class="form-horizontal form-label-left" method="post" novalidate>
+                    <p>
+                        İletişim ve diğer bilgilerinizi aşağıdan düzenleyebilirsiniz.
+                    </p>
+                    <span class="section">Kişisel Bilgiler</span>
+
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                            İsim <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="name" class="form-control col-md-7 col-xs-12" asp-for="Name" placeholder="Adınızı giriniz." required="required" type="text">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                            Soyisim <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="name" class="form-control col-md-7 col-xs-12" asp-for="Surname" placeholder="Soyadınızı giriniz." required="required" type="text">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                            İlçe <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="name" class="form-control col-md-7 col-xs-12" asp-for="District" placeholder="Yaşadığınız ilçeyi giriniz." required="required" type="text">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                            Şehir <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="name" class="form-control col-md-7 col-xs-12" asp-for="City" placeholder="Yaşadığınız şehri giriniz." required="required" type="text">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                            Telefon Numarası <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="name" class="form-control col-md-7 col-xs-12" asp-for="PhoneNumber" placeholder="Telefon numaranızı giriniz." required="required" type="text">
+                        </div>
+                    </div>
+
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">
+                            E-Posta <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="email" class="form-control col-md-7 col-xs-12" asp-for="PhoneNumber" placeholder="E-Posta adresinizi giriniz." required="required" type="text">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Şifre <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="password" type="password" asp-for="Password" class="form-control col-md-7 col-xs-12" placeholder="Şifrenizi giriniz." required="required">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Şifre Tekrar <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="password2" type="password" asp-for="Password" placeholder="Şifrenizi tekrar giriniz." class="form-control col-md-7 col-xs-12" required="required">
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                            <button type="submit" class="btn btn-primary">Vazgeç</button>
+                            <button id="send" type="submit" class="btn btn-success">Bilgilerimi Güncelle!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
