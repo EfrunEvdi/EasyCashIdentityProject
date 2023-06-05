@@ -103,7 +103,7 @@
                             E-Posta <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="email" class="form-control col-md-7 col-xs-12" asp-for="PhoneNumber" placeholder="E-Posta adresinizi giriniz." required="required" type="text">
+                            <input id="email" class="form-control col-md-7 col-xs-12" asp-for="Email" placeholder="E-Posta adresinizi giriniz." required="required" type="text">
                         </div>
                     </div>
                     <div class="item form-group">
@@ -119,14 +119,14 @@
                             Şifre Tekrar <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="password2" type="password" asp-for="Password" placeholder="Şifrenizi tekrar giriniz." class="form-control col-md-7 col-xs-12" required="required">
+                            <input id="password2" type="password" asp-for="ConfirmPassword" placeholder="Şifrenizi tekrar giriniz." class="form-control col-md-7 col-xs-12" required="required">
                         </div>
                     </div>
 
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                            <button type="submit" class="btn btn-primary">Vazgeç</button>
+                            <button type="reset" class="btn btn-primary">Vazgeç</button>
                             <button id="send" type="submit" class="btn btn-success">Bilgilerimi Güncelle!</button>
                         </div>
                     </div>

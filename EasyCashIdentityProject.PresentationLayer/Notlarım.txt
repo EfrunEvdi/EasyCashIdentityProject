@@ -160,3 +160,36 @@ Bu derste sidebar scroll kısmındaki hatayı giderip layoutu türkçeleştirdik
 
 # 21 Ders (Login Yapan Kullanıcı Bilgilerini Getirme)
 Bu derste giriş yapmış kullanıcıya ait bilgilerin geldiği Account sayfasını yaptık.
+
+# 22 Ders (Giriş Yapan Müşterinin Profil Bilgilerini Güncelleme)
+Bu derste giriş yapmış kkualnıcın bilgilerini güncelletirdik.
+
+# 23 Ders (Müşterinin Haraketler tablosu ile İlişkisi)
+Bu derste para alan ve para gönderen hesapların bire çok ilişkisi için öncelikle CustomerProccess tablosunda;
+public List<CustomerAccountProcess> CustomerSender {  get; set; }
+public List<CustomerAccountProcess> CustomerReceiver {  get; set; }
+
+yazdık ve ardından CustomerAccountProcess tablosunda;
+public int? SenderID { get; set; }
+public int? ReceiverID { get; set; }
+
+public CustomerAccount SenderCustomer { get; set; }
+public CustomerAccount ReceiverCustomer { get; set; }
+
+yazdık. Daha sonra Context sınıfında;
+protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<CustomerAccountProcess>()
+                .HasOne(x => x.SenderCustomer)
+                .WithMany(y => y.CustomerSender)
+                .HasForeignKey(z => z.SenderID)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            builder.Entity<CustomerAccountProcess>()
+                .HasOne(x => x.ReceiverCustomer)
+                .WithMany(y => y.CustomerReceiver)
+                .HasForeignKey(z => z.ReceiverID)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            base.OnModelCreating(builder); // Bu kısım ladığımız hatayı engelledi.
+        }
