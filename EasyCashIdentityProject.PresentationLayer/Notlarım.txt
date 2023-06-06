@@ -193,3 +193,37 @@ protected override void OnModelCreating(ModelBuilder builder)
 
             base.OnModelCreating(builder); // Bu kısım ladığımız hatayı engelledi.
         }
+
+# 24 Ders (Para Transferi İşlemi ve Bazı LINQ Sorgular)
+Bu derste Para transfer işlemini gerçekleştirebilmek için SendMoneyForCustomerAccountProcessDto classını açık gerekli propertyleri yazdıktan sonra bu sınıfa ait EntityFramework/EfCustomerAccountProcessDal sınıfı açtık. Ardından SendMoneyController ı açıp;
+
+[HttpPost]
+public async Task<IActionResult> Index(SendMoneyForCustomerAccountProcessDto sendMoneyForCustomerAccountProcessDto)
+{
+    var context = new Context();
+
+    var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+    var receiverAccountNumberID = context.CustomerAccounts
+        .Where(x => x.CustomerAccountNumber == sendMoneyForCustomerAccountProcessDto.ReceiverAccountNumber)
+        .Select(y => y.CustomerAccountID)
+        .FirstOrDefault();
+
+    sendMoneyForCustomerAccountProcessDto.SenderID = user.Id;
+    sendMoneyForCustomerAccountProcessDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
+    sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
+    sendMoneyForCustomerAccountProcessDto.ReceiverID = receiverAccountNumberID;
+
+    //_customerAccountProcessService.TInsert();
+
+    return RedirectToAction("Index", "Deneme");
+}
+
+yazdıktan sonra Index oluşturup template e uyduruyoruz.
+
+Devamında gönderme işlemi gerçekleşmesi için Program.cs'e ;
+
+builder.Services.AddScoped<ICustomerAccountProcessDal, EfCustomerAccountProcessDal>();
+builder.Services.AddScoped<ICustomerAccountProcessService, CustomerAccountProcessManager>();
+
+kodlarını ekliyoruz ve gelecek ders bu kısmı tamamlayacağız.

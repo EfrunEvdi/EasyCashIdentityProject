@@ -1,4 +1,5 @@
-﻿using EasyCashIdentityProject.DataAccessLayer.Abstract;
+﻿using EasyCashIdentityProject.BusinessLayer.Abstract;
+using EasyCashIdentityProject.DataAccessLayer.Abstract;
 using EasyCashIdentityProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EasyCashIdentityProject.BusinessLayer.Concrete
 {
-    public class CustomerAccountProcessManager : ICustomerAccountProcessDal
+    public class CustomerAccountProcessManager : ICustomerAccountProcessService
     {
         private readonly ICustomerAccountProcessDal _customerAccountProcessDal;
 
@@ -17,27 +18,27 @@ namespace EasyCashIdentityProject.BusinessLayer.Concrete
             _customerAccountProcessDal = customerAccountProcessDal;
         }
 
-        public void Delete(CustomerAccountProcess t)
+        public void TDelete(CustomerAccountProcess t)
         {
             _customerAccountProcessDal.Delete(t);
         }
 
-        public CustomerAccountProcess GetByID(int id)
+        public CustomerAccountProcess TGetByID(int id)
         {
             return _customerAccountProcessDal.GetByID(id);
         }
 
-        public List<CustomerAccountProcess> GetList()
+        public List<CustomerAccountProcess> TGetList()
         {
             return _customerAccountProcessDal.GetList();
         }
 
-        public void Insert(CustomerAccountProcess t)
+        public void TInsert(CustomerAccountProcess t)
         {
             _customerAccountProcessDal.Insert(t);
         }
 
-        public void Update(CustomerAccountProcess t)
+        public void TUpdate(CustomerAccountProcess t)
         {
             _customerAccountProcessDal.Update(t);
         }
