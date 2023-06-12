@@ -36,12 +36,19 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                 .Select(y => y.CustomerAccountID)
                 .FirstOrDefault();
 
-            sendMoneyForCustomerAccountProcessDto.SenderID = user.Id;
-            sendMoneyForCustomerAccountProcessDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
-            sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
-            sendMoneyForCustomerAccountProcessDto.ReceiverID = receiverAccountNumberID;
+            //sendMoneyForCustomerAccountProcessDto.SenderID = user.Id;
+            //sendMoneyForCustomerAccountProcessDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
+            //sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
+            //sendMoneyForCustomerAccountProcessDto.ReceiverID = receiverAccountNumberID;
 
-            //_customerAccountProcessService.TInsert();
+            var values = new CustomerAccountProcess();
+            values.ProcessType = "Havale";
+            values.Amount = sendMoneyForCustomerAccountProcessDto.Amount;
+            values.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            values.ReceiverID = receiverAccountNumberID;
+            values.SenderID = 1;
+
+            _customerAccountProcessService.TInsert(values);
 
             return RedirectToAction("Index", "Deneme");
         }

@@ -227,3 +227,6 @@ builder.Services.AddScoped<ICustomerAccountProcessDal, EfCustomerAccountProcessD
 builder.Services.AddScoped<ICustomerAccountProcessService, CustomerAccountProcessManager>();
 
 kodlarını ekliyoruz ve gelecek ders bu kısmı tamamlayacağız.
+
+# 25 Ders (Para Transferi İşlemi)
+Bu derste para gönderme işlemini tamamladık. ReceiverID ve Sender ID'deki sorunu bir sonraki ders düzelticez.
