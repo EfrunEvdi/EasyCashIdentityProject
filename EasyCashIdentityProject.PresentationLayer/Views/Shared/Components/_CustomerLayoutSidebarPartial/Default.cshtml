@@ -49,10 +49,10 @@
                     <li>
                         <a><i class="fa fa-send"></i> Para Transferleri <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="general_elements.html">TL Transferi</a></li>
-                            <li><a href="media_gallery.html">Dolar Transferi</a></li>
-                            <li><a href="typography.html">Euro Transferi</a></li>
-                            <li><a href="icons.html">Diğer Transferler</a></li>
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-mycurrency="TL">TL Transferi</a></li>
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-mycurrency="USD">Dolar Transferi</a></li>
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-mycurrency="EUR">Euro Transferi</a></li>
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-mycurrency="Other">Diğer Transferler</a></li>
                         </ul>
                     </li>
 

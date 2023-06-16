@@ -238,3 +238,8 @@ var receiverAccountNumberID = context.CustomerAccounts
                 .Where(x => x.CustomerAccountNumber == sendMoneyForCustomerAccountProcessDto.ReceiverAccountNumber)
                 .Select(y => y.CustomerAccountID)
                 .FirstOrDefault();
+
+# 27 Ders (Sidebar Üzerinden Parametreyle Veri Taşıma)
+Bu derste
+ <li><a asp-controller="SendMoney" asp-action="Index" asp-route-mycurrency="TL">TL Transferi</a></li> kodu ile
+ sidebardan veri taşıyabildik.
