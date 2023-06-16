@@ -230,3 +230,11 @@ kodlarını ekliyoruz ve gelecek ders bu kısmı tamamlayacağız.
 
 # 25 Ders (Para Transferi İşlemi)
 Bu derste para gönderme işlemini tamamladık. ReceiverID ve Sender ID'deki sorunu bir sonraki ders düzelticez.
+
+# 26 Ders (Para Transferi İşlemlerinde Detaylar)
+Bu derste Process tablosuna açıklama kolonu ekledik ve artık alıcı id'yi hesap numarasına göre tabloya yansıtabildik.
+
+var receiverAccountNumberID = context.CustomerAccounts
+                .Where(x => x.CustomerAccountNumber == sendMoneyForCustomerAccountProcessDto.ReceiverAccountNumber)
+                .Select(y => y.CustomerAccountID)
+                .FirstOrDefault();

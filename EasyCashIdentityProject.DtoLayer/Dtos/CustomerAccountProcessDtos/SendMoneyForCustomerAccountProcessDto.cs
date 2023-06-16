@@ -9,6 +9,7 @@ namespace EasyCashIdentityProject.DtoLayer.Dtos.CustomerAccountProcessDtos
     public class SendMoneyForCustomerAccountProcessDto
     {
         public string ProcessType { get; set; }
+        public string Description { get; set; }
         public decimal Amount { get; set; }
         public DateTime ProcessDate { get; set; }
 

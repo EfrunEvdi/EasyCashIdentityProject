@@ -36,6 +36,8 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                 .Select(y => y.CustomerAccountID)
                 .FirstOrDefault();
 
+            var senderAccountNumberID = context.CustomerAccounts.Where(x => x.AppUserID == user.Id).Where(y => y.CustomerAccountCurrency == "Türk Lirası").Select(z => z.CustomerAccountID).FirstOrDefault();
+
             //sendMoneyForCustomerAccountProcessDto.SenderID = user.Id;
             //sendMoneyForCustomerAccountProcessDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
             //sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
@@ -46,7 +48,8 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
             values.Amount = sendMoneyForCustomerAccountProcessDto.Amount;
             values.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             values.ReceiverID = receiverAccountNumberID;
-            values.SenderID = 1;
+            values.SenderID = senderAccountNumberID;
+            values.Description = sendMoneyForCustomerAccountProcessDto.Description;
 
             _customerAccountProcessService.TInsert(values);
 
