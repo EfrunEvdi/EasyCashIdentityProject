@@ -243,3 +243,5 @@ var receiverAccountNumberID = context.CustomerAccounts
 Bu derste
  <li><a asp-controller="SendMoney" asp-action="Index" asp-route-mycurrency="TL">TL Transferi</a></li> kodu ile
  sidebardan veri taşıyabildik.
+
+# 28 Ders (Rapid Api İle Döviz Kuru Bilgileri Çekme)
