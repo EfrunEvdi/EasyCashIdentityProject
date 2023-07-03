@@ -245,3 +245,7 @@ Bu derste
  sidebardan veri taşıyabildik.
 
 # 28 Ders (Rapid Api İle Döviz Kuru Bilgileri Çekme)
+Bu derste rapid api den istediğimiz kurun bilgisini çektik.
+
+# 29 Ders (Döviz Sayfası Düzenlemesi ve Son İşlemler Sayfası)
+Bu derste öncelikle çektiğimiz döviz kurları sayfasını güzelleştirip son işlemler sayfasını template e uydurduk.

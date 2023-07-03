@@ -3,19 +3,65 @@
     Layout = "~/Views/CustomerLayout/Index.cshtml";
 }
 
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title">
-            <div class="title_left">
-                <h3>Easy Cash Para Transfer Sayfası</h3>
-            </div>
-        </div>
-        <div class="clearfix"></div>
 
-        <h2>Dolar -> Türk Lirası: @ViewBag.UsdToTry</h2>
-        <h2>Euro -> Türk Lirası: @ViewBag.EurToTry</h2>
-        <h2>Sterlin -> Türk Lirası: @ViewBag.GbpToTry</h2>
-
+<div class="page-title">
+    <div class="title_left">
+        <h3> @DateTime.Now.ToShortDateString() Döviz Kurları </h3>
     </div>
 </div>
 
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="">
+            <div class="x_content">
+                <div class="row">
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon">
+                                <i class="fa fa-caret-square-o-right"></i>
+                            </div>
+                            <div class="count">@(ViewBag.UsdToTry.Substring(0, ViewBag.UsdToTry.IndexOf('.') + 5))</div>
+                            <h3>Dolar - Türk Lirası</h3>
+                            <p>Güncel $-₺ kuru.</p>
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon">
+                                <i class="fa fa-comments-o"></i>
+                            </div>
+                            <div class="count">@(ViewBag.EurToTry.Substring(0, ViewBag.EurToTry.IndexOf('.') + 5))</div>
+
+                            <h3>Euro - Türk Lirası</h3>
+                            <p>Güncel €-₺ kuru</p>
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon">
+                                <i class="fa fa-sort-amount-desc"></i>
+                            </div>
+                            <div class="count">@(ViewBag.GbpToTry.Substring(0, ViewBag.GbpToTry.IndexOf('.') + 5))</div>
+
+                            <h3>Sterlin - Türk Lirası</h3>
+                            <p>Güncel ß-₺ kuru</p>
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon">
+                                <i class="fa fa-check-square-o"></i>
+                            </div>
+                            <div class="count">@(ViewBag.UsdToEur.Substring(0, ViewBag.UsdToEur.IndexOf('.') + 5))</div>
+
+                            <h3>Dolar - Euro </h3>
+                            <p>Güncel $-ß kuru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
